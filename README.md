@@ -10,13 +10,13 @@ It allows users to perform basic arithmetic operations and displays the result o
 
 ## Files
 
-- <a href="My-Calculator/Calc.html">Calc.html</a> : the main HTML file for the calculator app
-- <a href="My-Calculator/Calc_Script.js">Calc_Script.js</a> : the JavaScript file containing the logic for the calculator
-- <a href="My-Calculator/Calc_Style.css">Calc_Style.css</a>: the CSS file containing the styles for the calculator interface
+- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc.html">Calc.html</a> : the main HTML file for the calculator app
+- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Script.js">Calc_Script.js</a> : the JavaScript file containing the logic for the calculator
+- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Style.css">Calc_Style.css</a>: the CSS file containing the styles for the calculator interface
 
 ## JavaScript
 
-The calculator's functionality is implemented using JavaScript, embeded in <a href="My-Calculator/Calc_Script.js">Calc_Script.js</a> file. 
+The calculator's functionality is implemented using JavaScript, embeded in <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Script.js">Calc_Script.js</a> file. 
 The script includes event listeners that respond to button clicks, and perform the necessary calculations based on the user's input. 
 The script also includes functions for performing addition, subtraction, multiplication, and division.
 Overall, this calculator is a good example of how HTML, CSS, and JavaScript can be used together to create a functional and aesthetically pleasing application.
@@ -27,7 +27,7 @@ Overall, this calculator is a good example of how HTML, CSS, and JavaScript can 
 
 ## Styling
 
-The calculator is styled using CSS, embeded in <a href="My-Calculator/Calc_Style.css">Calc_Style.css</a> file. 
+The calculator is styled using CSS, embeded in <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Style.css">Calc_Style.css</a> file. 
 The calculator's overall design features a white background with a linear gradient to the right, from **rgb(0, 170, 254) to rgb(0, 254, 108)**. 
 The buttons have a light blue background color, with a darker blue color on hover.
 The calculator display features a white background with balck text, and a border around it to give it a clean and modern look. The font used is "Gotham Rounded", which gives the calculator a professional and stylish appearance.
