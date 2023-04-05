@@ -5,7 +5,7 @@ This is a simple calculator web application built with HTML, CSS, and JavaScript
 It allows users to perform basic arithmetic operations and displays the result on the calculator screen.
 
 <div align="center">
-  <img src="/My-Calculator/Resources/Calc.png" alt="Calc" />
+  <img src="https://github.com/PRATHAM-099/My-Calculator/blob/main/Resources/Calc.png" height="400" width="800" alt="Calc" />
 </div>
 
 ## Files
@@ -13,17 +13,6 @@ It allows users to perform basic arithmetic operations and displays the result o
 - <a href="My-Calculator/Calc.html">Calc.html</a> : the main HTML file for the calculator app
 - <a href="My-Calculator/Calc_Script.js">Calc_Script.js</a> : the JavaScript file containing the logic for the calculator
 - <a href="My-Calculator/Calc_Style.css">Calc_Style.css</a>: the CSS file containing the styles for the calculator interface
-
-## Styling
-
-The calculator is styled using CSS, embeded in <a href="My-Calculator/Calc_Style.css">Calc_Style.css</a> file. 
-The calculator's overall design features a white background with a linear gradient to the right, from **rgb(0, 170, 254) to rgb(0, 254, 108)**. 
-The buttons have a light blue background color, with a darker blue color on hover.
-The calculator display features a white background with balck text, and a border around it to give it a clean and modern look. The font used is "Gotham Rounded", which gives the calculator a professional and stylish appearance.
-
-<div align="center">
-  <img src="https://media.giphy.com/media/2C7d9UoLglGPXy2j42/giphy.gif" alt ="gif" />
-</div>
 
 ## JavaScript
 
@@ -34,6 +23,17 @@ Overall, this calculator is a good example of how HTML, CSS, and JavaScript can 
 
 <div align="center">
   <img src="https://media.giphy.com/media/C4C9rQiGfLm2OGjjPO/giphy.gif" alt="gif" />
+</div>
+
+## Styling
+
+The calculator is styled using CSS, embeded in <a href="My-Calculator/Calc_Style.css">Calc_Style.css</a> file. 
+The calculator's overall design features a white background with a linear gradient to the right, from **rgb(0, 170, 254) to rgb(0, 254, 108)**. 
+The buttons have a light blue background color, with a darker blue color on hover.
+The calculator display features a white background with balck text, and a border around it to give it a clean and modern look. The font used is "Gotham Rounded", which gives the calculator a professional and stylish appearance.
+
+<div align="center">
+  <img src="https://media.giphy.com/media/2C7d9UoLglGPXy2j42/giphy.gif" alt ="gif" />
 </div>
 
 ## Features
