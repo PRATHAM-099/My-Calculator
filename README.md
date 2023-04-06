@@ -10,7 +10,7 @@ It allows users to perform basic arithmetic operations and displays the result o
 
 ## Files
 
-- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc.html">Calc.html</a> : the main HTML file for the calculator app
+- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/index.html">Calc.html</a> : the main HTML file for the calculator app
 - <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Script.js">Calc_Script.js</a> : the JavaScript file containing the logic for the calculator
 - <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Style.css">Calc_Style.css</a> : the CSS file containing the styles for the calculator interface
 
@@ -53,6 +53,3 @@ DEL deletes the last number of the main display.
 <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg" title="css3"  alt="css3" width="60" height="60"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript"  alt="javaScript" width="60" height="60"/>&nbsp;&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original-wordmark.svg" title="VSCode"  alt="VSCode" width="60" height="60"/>&nbsp;
-
-
-
