@@ -14,53 +14,40 @@ keys.addEventListener('click', e => {
         /* This code selects the elements from the HTML file. */
         const key = e.target;
         const action = key.dataset.action;
-        const keyContent = key.textContent;
-        const presentString = display.textContent;
-
-        const length = display.textContent.length;
-        const MAX_DISPLAY_LENGTH = 10;
+        const keyContent = key.textContent;// here
+        const presentString = display.value;
 
         /**
-         * The function adds a number to a display if certain conditions are met.
-         * @returns If the length is greater than or equal to MAX_DISPLAY_LENGTH, nothing is done and
-         * the function returns nothing.
+         * The function adds a number to the display value based on certain conditions.
          */
         function numbers() {
-            if (length >= MAX_DISPLAY_LENGTH) {
-                return; // don't do anything if max length is reached
-            }
-
-            if (presentString === '0' || presentString === ' 0') {
-                display.textContent = keyContent;
-            } else if (display.textContent.includes('ERROR')) {
-                display.textContent = keyContent;
-            } else if (subDisplay.textContent.includes('=')) {
-                subDisplay.textContent = ' '
-                display.textContent = keyContent;
+            if (presentString === '0') {
+                display.value = keyContent;
+            } else if (display.value.includes('ERROR')) {
+                display.value = keyContent;
+            } else if (subDisplay.value.includes('=')) {
+                subDisplay.value = ' '
+                display.value = keyContent;
             } else {
-                display.textContent = presentString + keyContent
+                display.value += keyContent
             }
+            console.log('display val :'+display.value)
         }
 
-        /**
-         * The function adds a decimal point to the display if certain conditions are met.
-         * @returns If the length of the display content is greater than or equal to the maximum
-         * display length, nothing will be done and the function will return.
-         */
+       
+       /**
+        * The function adds a decimal point to the current number displayed on a calculator.
+        */
         function decimal() {
-            if (length >= MAX_DISPLAY_LENGTH) {
-                return; // don't do anything if max length is reached
-            }
-
-            if (subDisplay.textContent.includes('=') || presentString == 'ERROR' || presentString == '∞') {
-                subDisplay.textContent = ' ';
-                display.textContent = ' 0.'
+            if (subDisplay.value.includes('=') || presentString == 'ERROR' || presentString == '∞') {
+                subDisplay.value = ' ';
+                display.value = ' 0.'
             } else if (presentString.includes('.')) {
-                display.textContent = presentString;
+                display.value = presentString;
             } else if (presentString == ' ') {
-                display.textContent = '0.'
+                display.value = '0.'
             } else {
-                display.textContent = presentString + '.';
+                display.value = presentString + '.';
             }
         }
 
@@ -69,91 +56,90 @@ keys.addEventListener('click', e => {
          * display and sub-display accordingly.
          */
         function operator() {
-            display.textContent += ' ' + keyContent;
+            display.value += keyContent;
 
-            const temp = subDisplay.textContent.split(" ");
+            const temp = subDisplay.value.split(" ");
             let firstVal = temp[0];
             let lastVal = presentString;
 
-            if (presentString == ' ' && (subDisplay.textContent.includes('+') || subDisplay.textContent.includes('-') || subDisplay.textContent.includes('*') || subDisplay.textContent.includes('/'))) {
-                subDisplay.textContent = firstVal + ' ' + keyContent;
-                display.textContent = ' ';
-            } else if (display.textContent.includes('ERROR') || display.textContent.includes('∞')) {
-                subDisplay.textContent = ' ';
-                display.textContent = 'ERROR';
-            } else if (subDisplay.textContent.includes('=')) {
-                display.textContent = ' ';
-                subDisplay.textContent = lastVal + ' ' + keyContent;
+            if (presentString == ' ' && (subDisplay.value.includes('+') || subDisplay.value.includes('-') || subDisplay.value.includes('*') || subDisplay.value.includes('/'))) {
+                subDisplay.value = firstVal + ' ' + keyContent;
+                display.value = ' ';
+            } else if (display.value.includes('ERROR') || display.value.includes('∞')) {
+                subDisplay.value = ' ';
+                display.value = 'ERROR';
+            } else if (subDisplay.value.includes('=')) {
+                display.value = ' ';
+                subDisplay.value = lastVal + ' ' + keyContent;
             } else if (lastVal.includes('.')) {
-                console.log('here')
-                subDisplay.textContent = lastVal + '0' + ' ' + keyContent;
-                display.textContent = ' '
-            } else if ((firstVal) && (subDisplay.textContent.includes('+') || subDisplay.textContent.includes('-') || subDisplay.textContent.includes('*') || subDisplay.textContent.includes('/'))) {
+                subDisplay.value = lastVal + '0' + ' ' + keyContent;
+                display.value = ' '
+            } else if ((firstVal) && (subDisplay.value.includes('+') || subDisplay.value.includes('-') || subDisplay.value.includes('*') || subDisplay.value.includes('/'))) {
 
-                const temp = subDisplay.textContent + lastVal;
+                const temp = subDisplay.value + lastVal;
 
                 try {
 
-                    display.textContent = eval(temp);
-                    subDisplay.textContent = display.textContent + ' ' + keyContent;
-                    display.textContent = ' ';
+                    display.value = eval(temp);
+                    subDisplay.value = display.value + ' ' + keyContent;
+                    display.value = ' ';                
 
-                    const stringTemp = subDisplay.textContent.toString();
-                    const length = stringTemp.length;
-                    if (length >= 10) {
-                        throw Error;
-                    }
-
-                    if (subDisplay.textContent.includes('Infinity')) {
-                        subDisplay.textContent = ' '
-                        display.textContent = '∞'
+                    if (subDisplay.value.includes('Infinity')) {
+                        subDisplay.value = ' '
+                        display.value = '∞'
                     }
 
                 } catch (error) {
-                    subDisplay.textContent = ' ';
-                    display.textContent = 'ERROR'
+                    subDisplay.value = ' ';
+                    display.value = 'ERROR'
                 }
             } else {
-                subDisplay.textContent = presentString + ' ' + keyContent + ' ';
-                display.textContent = ' ';
+                subDisplay.value = presentString + ' ' + keyContent;
+                display.value = ' ';
             }
         }
 
         /**
          * The function calculates the result of a mathematical expression entered by the user and
-         * displays it on the screen, while also handling errors and limiting the length of the result.
+         * displays it on the screen.
          */
         function calculate() {
-            if (!(subDisplay.textContent.includes('+') || subDisplay.textContent.includes('-') || subDisplay.textContent.includes('*') || subDisplay.textContent.includes('/'))) {
-                display.textContent = display.textContent;
-            } else if (subDisplay.textContent.includes('=')) {
-                subDisplay.textContent = subDisplay.textContent;
-                display.textContent = display.textContent;
-            } else {
+            const temp = subDisplay.value.split(" ");
+            let firstVal = temp[0];
+            let lastVal = presentString;
 
-                display.textContent += keyContent;
+            console.log('first val :' + firstVal);
+            console.log('last val :' + lastVal);
+
+            if (!(subDisplay.value.includes('+') || subDisplay.value.includes('-') || subDisplay.value.includes('*') || subDisplay.value.includes('/'))) {
+                display.value = display.value;
+            } else if (subDisplay.value.includes('=')) {
+                subDisplay.value = subDisplay.value;
+                display.value = display.value;
+            } else {
+                if (lastVal.includes('.')) {
+                    display.value = presentString + '0';
+                    console.log("display " + display.value);
+                }
+
+                console.log('display val : ' + display.value)
 
                 try {
 
-                    subDisplay.textContent += presentString;
+                    subDisplay.value += display.value;
+                    console.log('subdisplay ' + subDisplay.value)
+                    console.log('sub display val : ' + subDisplay.value)
+                    const result = eval(subDisplay.value);
+                    subDisplay.value += ' = ';
+                    display.value = result;
 
-                    const result = eval(subDisplay.textContent);
-                    const stringTemp = result.toString();
-                    const length = stringTemp.length;
-                    if (length >= 10) {
-                        throw Error;
-                    }
-
-                    subDisplay.textContent += ' = ';
-                    display.textContent = result;
-
-                    if (display.textContent == 'Infinity') {
-                        display.textContent = '∞'
+                    if (display.value == 'Infinity') {
+                        display.value = '∞'
                     }
 
                 } catch (e) {
-                    subDisplay.textContent = ' ';
-                    display.textContent = 'ERROR';
+                    subDisplay.value = ' ';
+                    display.value = 'ERROR';
                 }
             }
         }
@@ -188,13 +174,13 @@ keys.addEventListener('click', e => {
 
             /* This code is used to clear the display and sub-display. */
             case 'clear':
-                subDisplay.textContent = ' ';
-                display.textContent = '0';
+                subDisplay.value = ' ';
+                display.value = '0';
                 break;
 
             /* This code is used to delete the last character from the display. */
             case 'delete':
-                display.textContent = display.textContent.slice(0, -1);
+                display.value = display.value.slice(0, -1);
                 break;
         }
     }
