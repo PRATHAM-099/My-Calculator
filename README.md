@@ -12,7 +12,7 @@ It allows users to perform basic arithmetic operations and displays the result o
 
 - <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc.html">Calc.html</a> : the main HTML file for the calculator app
 - <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Script.js">Calc_Script.js</a> : the JavaScript file containing the logic for the calculator
-- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Style.css">Calc_Style.css</a>: the CSS file containing the styles for the calculator interface
+- <a href="https://github.com/PRATHAM-099/My-Calculator/blob/main/Calc_Style.css">Calc_Style.css</a> : the CSS file containing the styles for the calculator interface
 
 ## JavaScript
 
@@ -43,6 +43,10 @@ Performs basic mathematical operations such as
 - Subtraction
 - Multiplication
 - Division
+
+AC clears both the screen.
+
+DEL deletes the last number of the main display.
 
 ## Languages & Tools
 
