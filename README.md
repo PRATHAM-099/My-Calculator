@@ -44,8 +44,7 @@ Performs basic mathematical operations such as
 - Multiplication
 - Division
 
-AC clears both the screen.
-
+AC clears both the screen.<br>
 DEL deletes the last number of the main display.
 
 ## Languages & Tools
