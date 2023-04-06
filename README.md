@@ -5,7 +5,7 @@ This is a simple calculator web application built with HTML, CSS, and JavaScript
 It allows users to perform basic arithmetic operations and displays the result on the calculator screen.
 
 <div align="center">
-  <img src="https://github.com/PRATHAM-099/My-Calculator/blob/main/Resources/Calc.png" height="400" width="800" alt="Calc" />
+  <img src="https://github.com/PRATHAM-099/My-Calculator/blob/main/Resources/Calc.png" alt="Calc" />
 </div>
 
 ## Files
